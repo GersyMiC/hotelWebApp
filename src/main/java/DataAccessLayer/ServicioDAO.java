@@ -32,25 +32,18 @@ public class ServicioDAO {
     }
     
     public void insertar(Servicio servicio) throws Exception {
-        /*Connection con = null;
+        Connection con = null;
         CallableStatement cstm = null;
         try {
             con = Uconnection.getConnection();
             String sql = "";
 
-            sql = "CALL sp_usuario_insertar(?,?,?,?,?,?,?)";
+            sql = "CALL sp_servicio_insertar(?,?,?,?)";
             cstm.registerOutParameter(1, java.sql.Types.INTEGER);
 
-            if (usuario.getDni().isEmpty()) {
-                cstm.setNull(2, java.sql.Types.VARCHAR);
-            } else {
-                cstm.setString(2, usuario.getDni());
-            }
-
-            cstm.setString(3, usuario.getApellidoPaterno());
-            cstm.setString(4, usuario.getApellidoMaterno());
-            cstm.setString(5, usuario.getNombres());
-            cstm.setDate(6, Date.valueOf(usuario.getFechaNacimiento()));
+            cstm.setString(2, servicio.getTipoServicio());
+            cstm.setString(3, servicio.getDetalles());
+            cstm.setFloat(4, servicio.getPrecio());
 
             cstm.executeUpdate();
 
@@ -64,7 +57,7 @@ public class ServicioDAO {
                 cstm.close();
             }
 
-        }*/
+        }
     }
 
     public void actualizar(Servicio servicio) throws Exception {
